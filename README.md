@@ -58,7 +58,6 @@ LuCI 管理界面 for EasyMesh。基于 LuCI 的 Batman-Adv mesh 网络配置界
 - `batctl n` 命令输出解析修复，使用正确的 `io.popen` 而不是 `util.execi`
 - `tail -n +2` 与标题跳过逻辑一致
 - `encryption` 字符串比较从数字修复为字符串
-- 重复的 `po/zh-cn` 目录已移除（合并到 `po/zh_Hans`）
 - `po/zh-cn` 目录已移除（`po/zh_Hans` 的重复）
 - uci-defaults 脚本添加了 `IPKG_INSTROOT` 检查
 - Makefile 添加了缺少的 `PKG_MAINTAINER` 和 `PKG_RELEASE` 字段
