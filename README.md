@@ -1,19 +1,19 @@
 # luci-app-easymesh
 
-## Package Description
+## 软件包描述
 
-LuCI support for EasyMesh. A LuCI-based configuration interface for Batman-Adv mesh networking with 802.11s support, enabling seamless wireless/wired backhaul mesh networks on OpenWrt.
+LuCI 管理界面 for EasyMesh。基于 LuCI 的 Batman-Adv mesh 网络配置界面，支持 802.11s，可在 OpenWrt 上实现无缝无线/有线回程 mesh 网络。
 
-## Features
+## 功能特性
 
-- Batman-Adv mesh network configuration
-- 802.11s wireless mesh support
-- Wired/wireless backhaul support
-- AP mode with custom IP configuration
-- K/V/R (802.11k/v/r) support for optimized roaming
-- Integration with DAWN for dynamic roaming decisions
+- Batman-Adv mesh 网络配置
+- 802.11s 无线 mesh 支持
+- 有线/无线回程支持
+- AP 模式，支持自定义 IP 配置
+- K/V/R（802.11k/v/r）支持，优化漫游
+- 与 DAWN 集成，实现动态漫游决策
 
-## Dependencies
+## 依赖项
 
 - `kmod-cfg80211`
 - `kmod-batman-adv`
@@ -21,34 +21,34 @@ LuCI support for EasyMesh. A LuCI-based configuration interface for Batman-Adv m
 - `wpad-mesh-openssl`
 - `dawn`
 
-## Hardware Requirements
+## 硬件要求
 
-- Wireless card supporting 802.11s mesh (e.g., MediaTek MT76, Qualcomm Atheros, etc.)
-- Batman-Adv kernel module loaded
+- 支持 802.11s mesh 的无线网卡（如 MediaTek MT76、Qualcomm Atheros 等）
+- 已加载 Batman-Adv 内核模块
 
-## Normalized Package Path
+## 软件包路径说明
 
-This is a normalized and fixed version of the original `kenzok8/openwrt-packages` package, following standard OpenWrt LuCI app layout.
+这是原始 `kenzok8/openwrt-packages` 软件包的标准化修复版本，遵循标准 OpenWrt LuCI 应用布局。
 
-## Bugs Fixed
+## 修复的问题
 
-- Syntax errors in CBI model `detect_Node()` function (unbalanced parentheses)
-- Global variable leaks in CBI model (Lua globals `v`, `s`, `apRadio`, `enable`)
-- Missing `nixio` require in controller
-- `nixio.fs.access` call without requiring `nixio.fs` in controller
-- Missing `local` declarations in init script shell functions
-- Unquoted variables in shell scripts
-- Fragile `grep` command parsing replaced with robust `uci show` parsing
-- `add_wifi_mesh` function refactored to accept `apall` as parameter instead of relying on global scope
-- `uci commit` calls batched appropriately
-- `batctl n` command output parsing fixed with proper `io.popen` instead of `util.execi`
-- `tail -n +2` consistent with header skipping logic
-- `encryption` string comparison fixed from numeric to string
-- Duplicate `po/zh-cn` directory removed (consolidated to `po/zh_Hans`)
-- `po/zh-cn` directory removed (duplicate of `po/zh_Hans`)
-- `IPKG_INSTROOT` check added to uci-defaults script
-- Makefile missing `PKG_MAINTAINER` and `PKG_RELEASE` fields added
+- CBI 模型 `detect_Node()` 函数中的语法错误（括号不平衡）
+- CBI 模型中的全局变量泄漏（Lua 全局变量 `v`、`s`、`apRadio`、`enable`）
+- 控制器中缺少 `nixio` require
+- 控制器中 `nixio.fs.access` 调用未 require `nixio.fs`
+- init 脚本 shell 函数中缺少 `local` 声明
+- shell 脚本中未引用的变量
+- 脆弱的 `grep` 命令解析替换为健壮的 `uci show` 解析
+- `add_wifi_mesh` 函数重构为接受 `apall` 参数，而不是依赖全局作用域
+- `uci commit` 调用适当批处理
+- `batctl n` 命令输出解析修复，使用正确的 `io.popen` 而不是 `util.execi`
+- `tail -n +2` 与标题跳过逻辑一致
+- `encryption` 字符串比较从数字修复为字符串
+- 重复的 `po/zh-cn` 目录已移除（合并到 `po/zh_Hans`）
+- `po/zh-cn` 目录已移除（`po/zh_Hans` 的重复）
+- uci-defaults 脚本添加了 `IPKG_INSTROOT` 检查
+- Makefile 添加了缺少的 `PKG_MAINTAINER` 和 `PKG_RELEASE` 字段
 
-## Original Author
+## 原始作者
 
 dz &lt;dingzhong110@gmail.com&gt;
