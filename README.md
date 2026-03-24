@@ -6,6 +6,8 @@ LuCI 管理界面 for EasyMesh。基于 LuCI 的 Batman-Adv mesh 网络配置界
 
 ## 功能特性
 
+<small>
+
 - Batman-Adv mesh 网络配置
 - 802.11s 无线 mesh 支持
 - 有线/无线回程支持
@@ -13,7 +15,11 @@ LuCI 管理界面 for EasyMesh。基于 LuCI 的 Batman-Adv mesh 网络配置界
 - K/V/R（802.11k/v/r）支持，优化漫游
 - 与 DAWN 集成，实现动态漫游决策
 
+</small>
+
 ## 依赖项
+
+<small>
 
 - `kmod-cfg80211`
 - `kmod-batman-adv`
@@ -21,16 +27,24 @@ LuCI 管理界面 for EasyMesh。基于 LuCI 的 Batman-Adv mesh 网络配置界
 - `wpad-mesh-openssl`
 - `dawn`
 
+</small>
+
 ## 硬件要求
+
+<small>
 
 - 支持 802.11s mesh 的无线网卡（如 MediaTek MT76、Qualcomm Atheros 等）
 - 已加载 Batman-Adv 内核模块
+
+</small>
 
 ## 软件包路径说明
 
 这是原始 `kenzok8/openwrt-packages` 软件包的标准化修复版本，遵循标准 OpenWrt LuCI 应用布局。
 
 ## 修复的问题
+
+<small>
 
 - CBI 模型 `detect_Node()` 函数中的语法错误（括号不平衡）
 - CBI 模型中的全局变量泄漏（Lua 全局变量 `v`、`s`、`apRadio`、`enable`）
@@ -48,6 +62,8 @@ LuCI 管理界面 for EasyMesh。基于 LuCI 的 Batman-Adv mesh 网络配置界
 - `po/zh-cn` 目录已移除（`po/zh_Hans` 的重复）
 - uci-defaults 脚本添加了 `IPKG_INSTROOT` 检查
 - Makefile 添加了缺少的 `PKG_MAINTAINER` 和 `PKG_RELEASE` 字段
+
+</small>
 
 ## 原始作者
 
